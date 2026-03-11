@@ -8,11 +8,11 @@ class FC():
          if rng == None:
               rng = np.random.default_rng()
          self.weights = rng.uniform(-5 , 5, (n_output, n_input))
-         self.bias = rng.uniform(-5, 5, (n_output, 1))
+         self.bias = rng.uniform(-5, 5, (n_output,))
 
     def forward(self, input:np.ndarray) -> np.ndarray:
-          # z = self.weights @ input + self.bias
-          
+          # z = self.weights @ input + self.bias      
           # batch forward
-          z = input @ self.weights.T + self.bias
+          z = input @ self.weights.T + self.bias.T
           return z
+    

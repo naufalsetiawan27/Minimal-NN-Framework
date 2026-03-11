@@ -17,8 +17,10 @@ def main():
                  [0.9]])
 
     # model
-    model = MLP([FC(n_features,1),
-                 ReLU()])
+    model = MLP([FC(n_features,n_features),
+                 ReLU(),
+                 FC(n_features,1),
+                 Sigmoid()])
     logits = model.forward_pass(X)
     loss = MSE(logits, Y)
 
