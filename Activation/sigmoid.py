@@ -3,5 +3,8 @@ from .activation import *
 
 class Sigmoid(Activation):
     def forward(self, z: np.ndarray) -> np.ndarray:
-        a = 1 / (1 + np.exp(-z))
-        return a
+        self.a = 1 / (1 + np.exp(-z))
+        return self.a
+    
+    def backward(self, loss: np.ndarray) -> np.ndarray:
+        return (self.a * (1- self.a)) * loss
