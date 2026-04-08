@@ -1,4 +1,4 @@
-## Minimal Neural Network Framework
+## Mini Neural Network Framework
 
 This repo documents my progress building a neural network framework from scratch. My own goal is to deeply understand:
 
